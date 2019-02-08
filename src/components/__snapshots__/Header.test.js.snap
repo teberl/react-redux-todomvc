@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<header
+  className="header"
+>
+  <h1>
+    todos
+  </h1>
+  <input
+    placeholder="What needs to be done?"
+  />
+</header>
+`;
