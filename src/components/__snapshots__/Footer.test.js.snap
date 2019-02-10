@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer with SHOW_ALL filter renders the items count and clear button correct 1`] = `
+<footer
+  className="footer"
+>
+  <span
+    className="todo-count"
+  >
+    <strong>
+      1
+    </strong>
+     
+    item
+     left
+  </span>
+  <ul
+    className="filters"
+  >
+    <li>
+      <a
+        className="selected"
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        All
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/show_active"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Active
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/show_completed"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Completed
+      </a>
+    </li>
+  </ul>
+  <button
+    className="clear-completed"
+    onClick={[MockFunction]}
+  >
+    Clear completed
+  </button>
+</footer>
+`;
+
+exports[`Footer with SHOW_ALL filter renders the items count correct and no clear button 1`] = `
+<footer
+  className="footer"
+>
+  <span
+    className="todo-count"
+  >
+    <strong>
+      No
+    </strong>
+     
+    items
+     left
+  </span>
+  <ul
+    className="filters"
+  >
+    <li>
+      <a
+        className="selected"
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        All
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/show_active"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Active
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/show_completed"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Completed
+      </a>
+    </li>
+  </ul>
+</footer>
+`;
+
+exports[`with SHOW_ACTIVE filter renders the items count and clear button correct 1`] = `
+<footer
+  className="footer"
+>
+  <span
+    className="todo-count"
+  >
+    <strong>
+      4
+    </strong>
+     
+    items
+     left
+  </span>
+  <ul
+    className="filters"
+  >
+    <li>
+      <a
+        className=""
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        All
+      </a>
+    </li>
+    <li>
+      <a
+        className="selected"
+        href="/show_active"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Active
+      </a>
+    </li>
+    <li>
+      <a
+        className=""
+        href="/show_completed"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        Completed
+      </a>
+    </li>
+  </ul>
+  <button
+    className="clear-completed"
+    onClick={[MockFunction]}
+  >
+    Clear completed
+  </button>
+</footer>
+`;

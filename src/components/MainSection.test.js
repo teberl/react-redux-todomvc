@@ -6,11 +6,7 @@ import { MemoryRouter as Router, Route } from 'react-router-dom';
 import MainSection from './MainSection';
 
 test('MainSection should render correct', () => {
-  const actions = {
-    completeAllTodos: jest.fn(),
-    clearCompleted: jest.fn()
-  };
-  const state = () => [
+  const testState = [
     {
       text: 'Test one',
       completed: false,
@@ -22,18 +18,22 @@ test('MainSection should render correct', () => {
       id: 1
     }
   ];
+  const testReducer = () => testState;
+  const completedCount = testState.filter(todo => todo.completed).length;
+  const mainSectionProps = {
+    todosCount: testState.length,
+    completedCount,
+    actions: {
+      completeAllTodos: jest.fn(),
+      clearCompleted: jest.fn()
+    }
+  };
+
   const testRenderer = TestRenderer.create(
-    <Provider store={createStore(combineReducers({ todos: state }))}>
+    <Provider store={createStore(combineReducers({ todos: testReducer }))}>
       <Router>
         <Route
-          render={props => (
-            <MainSection
-              todosCount={2}
-              completedCount={1}
-              actions={actions}
-              {...props}
-            />
-          )}
+          render={props => <MainSection {...mainSectionProps} {...props} />}
         />
       </Router>
     </Provider>

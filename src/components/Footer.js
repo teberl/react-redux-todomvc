@@ -17,7 +17,7 @@ Footer.propTypes = {
   completedCount: PropTypes.number.isRequired,
   activeCount: PropTypes.number.isRequired,
   onClearCompleted: PropTypes.func.isRequired,
-  filter: PropTypes.oneOf([SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED])
+  filter: PropTypes.oneOf([SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED]).isRequired
 };
 
 function Footer(props) {
