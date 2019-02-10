@@ -2,8 +2,9 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import Header from './Header';
 
-it('renders correctly', () => {
-  const testRenderer = TestRenderer.create(<Header />).toJSON();
+test('Header should render correct', () => {
+  const props = { addTodo: jest.fn() };
+  const testRenderer = TestRenderer.create(<Header {...props} />).toJSON();
 
   expect(testRenderer).toMatchSnapshot();
 });

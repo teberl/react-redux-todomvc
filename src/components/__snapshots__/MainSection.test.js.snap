@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainSection should render correct 1`] = `
+<section
+  className="main"
+>
+  <span>
+    <input
+      checked={false}
+      className="toggle-all"
+      readOnly={true}
+      type="checkbox"
+    />
+    <label
+      onClick={[MockFunction]}
+    />
+  </span>
+  <ul
+    className="todo-list"
+  >
+    <li
+      className=""
+    >
+      <div
+        className="view"
+      >
+        <input
+          checked={false}
+          className="toggle"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          onDoubleClick={[Function]}
+        >
+          Test one
+        </label>
+        <button
+          className="destroy"
+          onClick={[Function]}
+        />
+      </div>
+    </li>
+    <li
+      className="completed"
+    >
+      <div
+        className="view"
+      >
+        <input
+          checked={true}
+          className="toggle"
+          onChange={[Function]}
+          type="checkbox"
+        />
+        <label
+          onDoubleClick={[Function]}
+        >
+          Test two
+        </label>
+        <button
+          className="destroy"
+          onClick={[Function]}
+        />
+      </div>
+    </li>
+  </ul>
+  <footer
+    className="footer"
+  >
+    <span
+      className="todo-count"
+    >
+      <strong>
+        1
+      </strong>
+       
+      item
+       left
+    </span>
+    <ul
+      className="filters"
+    >
+      <li>
+        <a
+          className="selected"
+          href="/"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          All
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/show_active"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Active
+        </a>
+      </li>
+      <li>
+        <a
+          className=""
+          href="/show_completed"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          Completed
+        </a>
+      </li>
+    </ul>
+    <button
+      className="clear-completed"
+      onClick={[MockFunction]}
+    >
+      Clear completed
+    </button>
+  </footer>
+</section>
+`;

@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-It is heavily based on the [example](https://github.com/reduxjs/redux/tree/master/examples/todomvc) from reduxjs and the react-redux [example](https://codesandbox.io/s/9on71rvnyo)
+It is heavily based on the [TodoApp](https://github.com/reduxjs/redux/tree/master/examples/todomvc) from reduxjs.
+The Routing is based on the [react-router integration](https://redux.js.org/advanced/usage-with-react-router) also from reduxjs.
 
 ## Available Scripts
 
@@ -18,6 +18,8 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+See also the section for [testing](https://reacttraining.com/react-router/web/guides/testing) at react-router for more information.
 
 ### `npm run build`
 

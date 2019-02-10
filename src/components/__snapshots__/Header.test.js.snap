@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`Header should render correct 1`] = `
 <header
   className="header"
 >
@@ -8,7 +8,14 @@ exports[`renders correctly 1`] = `
     todos
   </h1>
   <input
+    autoFocus={true}
+    className="new-todo"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onKeyDown={[Function]}
     placeholder="What needs to be done?"
+    type="text"
+    value=""
   />
 </header>
 `;

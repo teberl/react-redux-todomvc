@@ -1,13 +1,20 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import TodoTextInput from './TodoTextInput';
 
-Header.propTypes = {};
+Header.propTypes = {
+  addTodo: PropTypes.func.isRequired
+};
 
-function Header() {
+function Header({ addTodo }) {
   return (
     <header className="header">
       <h1>todos</h1>
-      <input placeholder="What needs to be done?" />
+      <TodoTextInput
+        newTodo
+        placeholder="What needs to be done?"
+        onSave={text => addTodo(text)}
+      />
     </header>
   );
 }
