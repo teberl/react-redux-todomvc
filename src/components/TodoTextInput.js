@@ -29,7 +29,8 @@ function TodoTextInput(props) {
 
   const handleBlur = e => {
     if (!newTodo) {
-      onSave(e.target.value);
+      const text = e.target.value.trim();
+      onSave(text);
     }
   };
 

@@ -7,13 +7,18 @@ Header.propTypes = {
 };
 
 function Header({ addTodo }) {
+  const handleSave = text => {
+    if (text.length > 0) {
+      addTodo(text);
+    }
+  };
   return (
     <header className="header">
       <h1>todos</h1>
       <TodoTextInput
         newTodo
         placeholder="What needs to be done?"
-        onSave={text => addTodo(text)}
+        onSave={handleSave}
       />
     </header>
   );
