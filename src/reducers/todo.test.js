@@ -11,7 +11,7 @@ describe('todos reducer', () => {
   ];
 
   test('create initial state', () => {
-    expect(todos(undefined, {})).toEqual(initialState);
+    expect(todos(undefined, {})).toEqual([]);
   });
 
   test('add todo', () => {

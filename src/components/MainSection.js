@@ -2,7 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Footer from './Footer';
 import VisibleTodoList from '../containers/VisibleTodoList';
-import { SHOW_ALL } from '../constants/todoFilters';
+import {
+  SHOW_ALL,
+  SHOW_ACTIVE,
+  SHOW_COMPLETED
+} from '../constants/todoFilters';
 
 MainSection.propTypes = {
   todosCount: PropTypes.number.isRequired,
@@ -10,6 +14,11 @@ MainSection.propTypes = {
   actions: PropTypes.shape({
     completeAllTodos: PropTypes.func.isRequired,
     clearCompleted: PropTypes.func.isRequired
+  }),
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      filter: PropTypes.oneOf([SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED])
+    })
   })
 };
 
@@ -36,12 +45,14 @@ function MainSection(props) {
         </span>
       )}
       <VisibleTodoList filter={filter} />
-      <Footer
-        completedCount={completedCount}
-        activeCount={todosCount - completedCount}
-        onClearCompleted={clearCompleted}
-        filter={filter}
-      />
+      {!!todosCount && (
+        <Footer
+          completedCount={completedCount}
+          activeCount={todosCount - completedCount}
+          onClearCompleted={clearCompleted}
+          filter={filter}
+        />
+      )}
     </section>
   );
 }
