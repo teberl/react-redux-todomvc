@@ -15,9 +15,11 @@ const persistedState = loadState();
 
 const store = createStore(rootReducer, persistedState);
 
-store.subscribe(() => {
-  throttle(1000, saveState(store.getState()));
+const saveThrottled = throttle(1000, () => {
+  saveState(store.getState());
 });
+
+store.subscribe(saveThrottled);
 
 render(
   <Provider store={store}>

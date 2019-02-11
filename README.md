@@ -1,3 +1,9 @@
+# React Redux TodoMVC
+
+> TodoMVC using react, react-redux, react-router and localStorage
+
+![](./screenshot.jpg)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).  
 It is heavily based on the [TodoApp](https://github.com/reduxjs/redux/tree/master/examples/todomvc) from reduxjs.  
 The Routing is based on the [react-router integration](https://redux.js.org/advanced/usage-with-react-router) also from reduxjs.
