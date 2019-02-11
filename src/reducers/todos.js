@@ -15,7 +15,7 @@ export default function todos(state = initialState, action) {
       return [
         ...state,
         {
-          id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
+          id: Math.max(...state.map(todo => todo.id)) + 1,
           completed: false,
           text: action.text
         }

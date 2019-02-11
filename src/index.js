@@ -4,13 +4,20 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
-
+import { throttle } from 'throttle-debounce';
+import { loadState, saveState } from './localStorage';
 import rootReducer from './reducers';
 import App from './components/App';
 import 'todomvc-app-css/index.css';
 import './css/index.css';
 
-const store = createStore(rootReducer);
+const persistedState = loadState();
+
+const store = createStore(rootReducer, persistedState);
+
+store.subscribe(() => {
+  throttle(1000, saveState(store.getState()));
+});
 
 render(
   <Provider store={store}>

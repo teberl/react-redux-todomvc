@@ -6,7 +6,7 @@ describe('todos reducer', () => {
     {
       text: 'Create ReactReduxTodoMvc',
       completed: false,
-      id: 0
+      id: 1
     }
   ];
 
@@ -18,67 +18,68 @@ describe('todos reducer', () => {
     const todo = {
       text: 'Add todo',
       completed: false,
-      id: 1
+      id: 2
     };
-    const expectetResult = initialState.concat(todo);
-
-    expect(
-      todos(initialState, { type: actions.ADD_TODO, text: 'Add todo' })
-    ).toEqual(expectetResult);
+    const expectetState = initialState.concat(todo);
+    const newState = todos(initialState, {
+      type: actions.ADD_TODO,
+      text: 'Add todo'
+    });
+    expect(newState).toEqual(expectetState);
   });
 
   test('delete todo', () => {
     const todo = {
       text: 'Add todo',
       completed: false,
-      id: 1
+      id: 2
     };
     const todoState = initialState.concat(todo);
 
-    expect(todos(todoState, { type: actions.DELETE_TODO, id: 1 })).toEqual(
+    expect(todos(todoState, { type: actions.DELETE_TODO, id: 2 })).toEqual(
       initialState
     );
   });
 
   test('edit todo', () => {
-    const expectetResult = [
+    const expectetState = [
       {
         text: 'Edit todo',
         completed: false,
-        id: 0
+        id: 1
       }
     ];
 
     expect(
-      todos(initialState, { type: actions.EDIT_TODO, id: 0, text: 'Edit todo' })
-    ).toEqual(expectetResult);
+      todos(initialState, { type: actions.EDIT_TODO, id: 1, text: 'Edit todo' })
+    ).toEqual(expectetState);
   });
 
   test('complete todo', () => {
-    const expectetResult = [
+    const expectetState = [
       {
         text: 'Create ReactReduxTodoMvc',
         completed: true,
-        id: 0
+        id: 1
       }
     ];
 
-    expect(todos(initialState, { type: actions.COMPLETE_TODO, id: 0 })).toEqual(
-      expectetResult
+    expect(todos(initialState, { type: actions.COMPLETE_TODO, id: 1 })).toEqual(
+      expectetState
     );
   });
 
   test('complete todo', () => {
-    const expectetResult = [
+    const expectetState = [
       {
         text: 'Create ReactReduxTodoMvc',
         completed: true,
-        id: 0
+        id: 1
       }
     ];
 
-    expect(todos(initialState, { type: actions.COMPLETE_TODO, id: 0 })).toEqual(
-      expectetResult
+    expect(todos(initialState, { type: actions.COMPLETE_TODO, id: 1 })).toEqual(
+      expectetState
     );
   });
 
@@ -87,12 +88,12 @@ describe('todos reducer', () => {
       {
         text: 'Second Todo',
         completed: false,
-        id: 1
+        id: 2
       },
       {
         text: 'Third Todo',
         completed: false,
-        id: 2
+        id: 3
       }
     );
 
@@ -105,12 +106,12 @@ describe('todos reducer', () => {
       {
         text: 'Second Todo',
         completed: true,
-        id: 1
+        id: 2
       },
       {
         text: 'Third Todo',
         completed: true,
-        id: 2
+        id: 3
       }
     );
 
