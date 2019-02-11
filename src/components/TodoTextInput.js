@@ -8,12 +8,11 @@ TodoTextInput.propTypes = {
   onSave: PropTypes.func.isRequired,
   text: PropTypes.string,
   placeholder: PropTypes.string,
-  editing: PropTypes.bool,
   newTodo: PropTypes.bool
 };
 
 function TodoTextInput(props) {
-  const { onSave, text, placeholder, editing, newTodo } = props;
+  const { onSave, text, placeholder, newTodo } = props;
   const [localText, setLocalText] = useState(text || '');
 
   const handleSubmit = e => {
@@ -36,8 +35,7 @@ function TodoTextInput(props) {
 
   return (
     <input
-      className={classnames({
-        edit: editing,
+      className={classnames('edit', {
         'new-todo': newTodo
       })}
       type="text"

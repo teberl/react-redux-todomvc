@@ -15,7 +15,7 @@ TodoItem.propTypes = {
 };
 
 function TodoItem({ todo, deleteTodo, editTodo, completeTodo }) {
-  const [edit, setEdit] = useState(false);
+  const [editing, setEditing] = useState(false);
 
   const handleSave = (id, text) => {
     if (text.length === 0) {
@@ -23,15 +23,15 @@ function TodoItem({ todo, deleteTodo, editTodo, completeTodo }) {
     } else {
       editTodo(id, text);
     }
-    setEdit(false);
+    setEditing(false);
   };
 
   let element;
-  if (edit) {
+  if (editing) {
     element = (
       <TodoTextInput
         text={todo.text}
-        editing={edit}
+        editing={editing}
         onSave={text => handleSave(todo.id, text)}
       />
     );
@@ -44,19 +44,14 @@ function TodoItem({ todo, deleteTodo, editTodo, completeTodo }) {
           checked={todo.completed}
           onChange={() => completeTodo(todo.id)}
         />
-        <label onDoubleClick={() => setEdit(!edit)}>{todo.text}</label>
+        <label onDoubleClick={() => setEditing(!editing)}>{todo.text}</label>
         <button className="destroy" onClick={() => deleteTodo(todo.id)} />
       </div>
     );
   }
 
   return (
-    <li
-      className={classnames({
-        completed: todo.completed,
-        editing: edit
-      })}
-    >
+    <li className={classnames({ completed: todo.completed, editing })}>
       {element}
     </li>
   );

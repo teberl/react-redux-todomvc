@@ -1,0 +1,3 @@
+.todo-list li.editing .edit {
+  width: calc(100% - 43px);
+}

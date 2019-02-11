@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import rootReducer from './reducers';
 import App from './components/App';
 import 'todomvc-app-css/index.css';
+import './css/index.css';
 
 const store = createStore(rootReducer);
 
